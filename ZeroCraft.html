@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Bootstrap Tutorial Lesson: Complete Bootstrap 4 Website Layout -->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZeroCraft</title>
+
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/popper.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      #bg-pl {
+        height: 100%;
+        background: #262626;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Connect</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--- Image Slider -->
+    <div id="slides" class="carousel slide" data-rider="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#slides" data-slide-to="0" class="active"></li>
+        <li data-target="#slides" data-slide-to="1"></li>
+        <li data-target="#slides" data-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/background.png" />
+          <div class="carousel-caption">
+            <h1 class="display-2">Bootstrap</h1>
+            <h3>Complete Website Layout</h3>
+            <button type="button" class="btn btn-outline-light btn-lg">
+              VIEW DEMO
+            </button>
+            <button type="button" class="btn btn-primary btn-lg">
+              Get Started
+            </button>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/background2.png" />
+        </div>
+        <div class="carousel-item">
+          <img src="img/background3.png" />
+        </div>
+      </div>
+    </div>
+
+    <div id="bg-pl"></div>
+
+    <script type="text/javascript" src="/js/partical/particles.js"></script>
+    <script type="text/javascript" src="/js/partical/app.js"></script>
+  </body>
+</html>
