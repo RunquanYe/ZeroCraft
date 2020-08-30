@@ -10,14 +10,55 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      html,
-      body {
-        height: 100%;
-      }
-
       #bg-pl {
         height: 100%;
         background: #262626;
+      }
+
+       ::-webkit-scrollbar {
+        width: 0;
+      }
+
+      #scrollPath,
+      #progressbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 10px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      #progressbar {
+        height: 0;
+        background: linear-gradient(to top, #008aff, #00ffe7);
+        animation: animate 5s linear infinite;
+      }
+
+      @keyframes animate {
+        0%,
+        100% {
+          filter: hue-rotate(0deg);
+        }
+
+        50% {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      #progressbar::before,
+      #progressbar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to top, #008aff, #00ffe7);
+        filter: blur(10px);
+      }
+
+      #progressbar::after {
+        filter: blur(30px);
       }
     </style>
   </head>
@@ -78,6 +119,9 @@
       </div>
     </div>
 
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    
     <div id="bg-pl">
       <div class="container">
 
@@ -130,5 +174,15 @@
 
     <script type="text/javascript" src="js/partical/particles.js"></script>
     <script type="text/javascript" src="js/partical/app.js"></script>
+
+    <script type="text/javascript">
+      let progress = document.getElementById("progressbar");
+      
+      let totalHeight = document.body.scrollHeight - window.innerHeight;
+      window.onscroll = () => {
+        let progressHeight = (window.pageYOffset / totalHeight) * 100;
+        progress.style.height = progressHeight + "%";
+      };
+    </script>
   </body>
 </html>
