@@ -2,7 +2,6 @@
 
 html,
 body {
-  height: 100%;
   width: 100%;
   font-family: "Poppins", sans-serif;
   color: #222;
@@ -21,25 +20,46 @@ body {
   font-size: 1.1em !important;
 }
 
+.carousel-inner {
+  width: 100%;
+  height: 30em;
+}
+
 .carousel-inner img {
   width: 100%;
-  height: 100%;
+  height: 30em;
+  object-fit: cover;
+  opacity: 85%;
 }
 
 .carousel-caption {
   position: absolute;
-  top: 50%;
+  top: 44%;
   transform: translateY(-50%);
 }
 
 .carousel-caption h1 {
-  font-size: 500%;
+  font-size: 10em;
   text-transform: uppercase;
   text-shadow: 1px 1px 15px #000;
 }
 
+#coolText {
+  color: #29b6f6;
+  animation: colorChange 5s linear infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
 .carousel-caption h3 {
-  font-size: 200%;
+  font-size: 15mm;
   font-weight: 500;
   text-shadow: 1px 1px 10px #000;
   padding-bottom: 1rem;
@@ -162,91 +182,6 @@ hr.light-100 {
   margin-bottom: 1rem;
 }
 
-/*---Media Queries --*/
-@media (max-width: 992px) {
-  .social a {
-    font-size: 4em;
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .carousel-caption {
-    top: 45%;
-  }
-
-  .carousel-caption h1 {
-    font-size: 350%;
-  }
-
-  .carousel-caption h3 {
-    font-size: 140%;
-    font-weight: 400;
-    padding-bottom: 0.2rem;
-  }
-
-  .carousel-caption .btn {
-    font-size: 95%;
-    padding: 8px 14px;
-  }
-
-  .disply-4 {
-    font-size: 200%;
-  }
-
-  .social a {
-    font-size: 2.5em;
-    padding: 1.2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-caption {
-    top: 40%;
-  }
-
-  .carousel-caption h1 {
-    font-size: 250%;
-  }
-
-  .carousel-caption h3 {
-    font-size: 110%;
-  }
-
-  .carousel-caption .btn {
-    font-size: 90%;
-    padding: 4px 8px;
-  }
-
-  .carousel-indicator {
-    display: none;
-  }
-
-  .disply-4 {
-    font-size: 160%;
-  }
-
-  .social a {
-    font-size: 2em;
-    padding: 0.7rem;
-  }
-}
-
-/*---Firefox Bug Fix --*/
-.carousel-item {
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-}
-/*--- Fixed Background Image --*/
-figure {
-  position: relative;
-  width: 100%;
-  height: 60%;
-  margin: 0 !important;
-}
 .fixed-wrap {
   clip: rect(0, auto, auto, 0);
   position: absolute;
@@ -268,10 +203,6 @@ figure {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   will-change: transform;
-}
-/*--- Bootstrap Padding Fix --*/
-[class*="col-"] {
-  padding: 1rem;
 }
 
 /*
